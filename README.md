@@ -1,5 +1,7 @@
 FlagSense
 
+![Alt text](relative%20images/logo.png?raw=true "Title")
+
 FlagSense is a Python package for detecting and classifying flags in images. Using advanced computer vision techniques, FlagSense identifies national flags and determines which country they belong to. FlagSense uses state-of-the-art models to detect flags in real-world contexts and accurately classify them by country. 
 
 Installation
