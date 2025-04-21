@@ -38,7 +38,7 @@ By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By 
 
 The model was trained on a dataset of 24,278 images encompassing 241 flags belonging to nations and certain territories. A list of flags recognized in the package can be found in “Supported Countries and Flags.” This includes all 193 member states recognized by the UN as well as 48 non-member states (e.g., Vatican City, Palestine) , partially recognized states (e.g., Kosovo, South Ossetia), or certain non-sovereign territories with strong national identities and recognizable flags (e.g., Puerto Rico, Greenland).
 
-The full list of supported countries can be found in supported_countries.md.
+The full list of supported countries can be found in [Supported Countries List](./supported_countries.md)
 
 <h2>Description of Training</h2>
 
