@@ -27,6 +27,11 @@ By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By 
 
 ```flagsense input_path –verbose```
 
+<p align="left">
+  <img src="images/france_brazil.png" height="192"/>
+  <img src="images/germany_china.png" height="192"/>
+</p>
+
 <h2>Interpreting/Exporting Output (Format)</h2>
 
 <h2>Supported Countries and Flags</h2>
