@@ -1,0 +1,45 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Package build artifacts
+*.egg-info/
+build/
+dist/
+*.whl
+*.tar.gz
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model weights (if big)
+*.pt
+*.pth
+
+# Logs and outputs
+*.log
+*.tmp
+
+# VSCode or PyCharm configs
+.vscode/
+.idea/
+
+# Test output and annotations
+*_annotated.jpg
+*_coco.json
+*.txt
+
+# Flagged image folders or results
+*_annotations/
+
