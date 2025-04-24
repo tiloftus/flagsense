@@ -34,6 +34,12 @@ By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By 
 
 <h2>Interpreting/Exporting Output (Format)</h2>
 
+By default, FlagSense outputs annotations in YOLO and COCO JSON format. After running the package, a new folder called <input_path>_annotations will be created. This folder will contain a folder called “yolo” containing the YOLO format annotations and a folder “coco” containing the COCO JSON annotations. If the –verbose flag is used, another folder “image_overlay” will be created containing the image or images with the annotations and corresponding confidence level overlaid, as shown below.
+
+<p align="left">
+  <img src="images/nigeria.png" height="192"/>
+</p>
+
 <h2>Supported Countries and Flags</h2>
 
 The model was trained on a dataset of 24,278 images encompassing 241 flags belonging to nations and certain territories. A list of flags recognized in the package can be found in “Supported Countries and Flags.” This includes all 193 member states recognized by the UN as well as 48 non-member states (e.g., Vatican City, Palestine) , partially recognized states (e.g., Kosovo, South Ossetia), or certain non-sovereign territories with strong national identities and recognizable flags (e.g., Puerto Rico, Greenland).
