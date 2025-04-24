@@ -17,7 +17,11 @@ After installation, FlagSense can be easily used in the command line by running 
 
 ```flagsense input_path```
 
-The --model flag allows the user to choose from a list of models included in the package. The default model (if no value is input) is a custom YOLOv8 model trained on all nation flags. The user can choose additional models if they prefer, or can choose continent-specific models. Continent specific models are useful in situations where the user may know the location of an image and thus expect certain nation flags, or is only interested in classifying flags of a certain continent. A list of models and the flags to call them is below:
+The --model flag allows the user to choose from a list of models included in the package. The default model (if no value is input) is a custom YOLOv8 model trained on all nation flags. The user can choose additional models if they prefer, or can choose continent-specific models. Continent-specific models are useful in situations where the user may know the location of an image and thus expect certain nation flags, or is only interested in classifying flags of a certain continent. For example, if a user knows they only need to search for African flags, they can use FlagSense as below by calling any Africa model they choose.
+
+```flagsense input_path --model v8_africa```
+
+A list of models and the flags to call them is below:
 
 * v8 - YOLOv8, all countries
 * v9 - YOLOv9, all countries
