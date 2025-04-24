@@ -38,9 +38,20 @@ By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By 
 
 The model was trained on a dataset of 24,278 images encompassing 241 flags belonging to nations and certain territories. A list of flags recognized in the package can be found in “Supported Countries and Flags.” This includes all 193 member states recognized by the UN as well as 48 non-member states (e.g., Vatican City, Palestine) , partially recognized states (e.g., Kosovo, South Ossetia), or certain non-sovereign territories with strong national identities and recognizable flags (e.g., Puerto Rico, Greenland).
 
-The full list of supported countries can be found in [Supported Countries List](./supported_countries.md)
+The full list of supported countries can be found in [Supported Countries List](./supported_countries.md).
 
 <h2>Description of Training</h2>
+
+### All-Country Flag Detection Results
+
+| Metric      | YOLOv8 | YOLOv9 | YOLOv10 | YOLOv11 | Roboflow 3.0 |
+|-------------|--------|--------|---------|---------|---------------|
+| Precision   | 0.772  | 0.745  | 0.745   | 0.758   | 0.805         |
+| Recall      | 0.802  | 0.774  | 0.725   | 0.810   | 0.788         |
+| mAP50       | 0.841  | 0.825  | 0.769   | 0.841   | 0.855         |
+| mAP50-95    | 0.657  | 0.649  | 0.609   | 0.641   | 0.669         |
+
+<h2>Model Information and Literature Review</h2>
 
 <h2>License</h2>
 DeepFace is licensed under the MIT License - see LICENSE for more details.
