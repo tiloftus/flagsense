@@ -22,6 +22,25 @@ The --model flag allows the user to choose from a list of models included in the
 * v8 - YOLOv8, all countries
 * v9 - YOLOv9, all countries
 * v10 - YOLOv10, all countries
+* v8_africa: YOLOv8, Africa
+* v9_africa: YOLOv9, Africa
+* v10_africa: YOLOv10, Africa
+* v8_asia: YOLOv8, Asia
+* v9_asia: YOLOv9, Asia
+* v10_asia: ,
+* v8_europe: ,
+* v9_europe: YOLOv9, Europe
+* v10_europe: YOLOv10, Europe
+* v8_northamerica: YOLOv8, North America
+* v9_northamerica: YOLOv9, North America
+* v10_northamerica: YOLOv10, North America
+* v8_oceania: YOLOv8, Oceania
+* v9_oceania: YOLOv9, Oceania
+* v10_oceania: ,
+* v8_southamerica: YOLOv8, South America
+* v9_southamerica: YOLOv9, South America
+* v10_southamerica: YOLOv10, South America
+
 
 By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By adding the flag “verbose”, the model can also output each image overlaid with the annotation. This is off by default since, with a large dataset, creating an additional image for each input image may increase runtime and take up storage.
 
