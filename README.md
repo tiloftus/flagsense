@@ -51,7 +51,42 @@ The full list of supported countries can be found in [Supported Countries List](
 | mAP50       | 0.841  | 0.825  | 0.769   | 0.841   | 0.855         |
 | mAP50-95    | 0.657  | 0.649  | 0.609   | 0.641   | 0.669         |
 
+### YOLOv8 Continent-Specific Model Results
+
+|                | North America | South America | Africa | Europe | Asia | Oceania |
+|----------------|----------------|----------------|--------|--------|------|---------|
+| Precision      | 0.810          | 0.896          | 0.884  | 0.762  | 0.854 | 0.888   |
+| Recall         | 0.834          | 0.825          | 0.907  | 0.676  | 0.803 | 0.840   |
+| mAP50          | 0.862          | 0.911          | 0.946  | 0.749  | 0.853 | 0.875   |
+| mAP50-95       | 0.639          | 0.653          | 0.748  | 0.540  | 0.631 | 0.730   |
+
+### YOLOv9 Continent-Specific Model Results
+|                | North America | South America | Africa | Europe | Asia | Oceania |
+|----------------|----------------|----------------|--------|--------|------|---------|
+| Precision      | 0.881          | 0.818          | 0.854  | 0.725  | 0.804 | 0.867   |
+| Recall         | 0.794          | 0.857          | 0.913  | 0.699  | 0.815 | 0.833   |
+| mAP50          | 0.862          | 0.894          | 0.959  | 0.770  | 0.850 | 0.883   |
+| mAP50-95       | 0.659          | 0.647          | 0.769  | 0.557  | 0.628 | 0.736   |
+
+### YOLOv10 Continent-Specific Model Results
+|                | North America | South America | Africa | Europe | Asia | Oceania |
+|----------------|----------------|----------------|--------|--------|------|---------|
+| Precision      | 0.875          | 0.848          | 0.866  | 0.727  | 0.822 | 0.880   |
+| Recall         | 0.748          | 0.781          | 0.831  | 0.691  | 0.762 | 0.818   |
+| mAP50          | 0.855          | 0.866          | 0.921  | 0.746  | 0.840 | 0.867   |
+| mAP50-95       | 0.646          | 0.630          | 0.738  | 0.544  | 0.619 | 0.717   |
+
 <h2>Model Information and Literature Review</h2>
+
+National flags and related symbols play a significant role in shaping political attitudes and behaviors. They can elicit emotional responses and be revealing of political beliefs (Amavilah, 2008). For example, Trofimchuk & Goh (2023) found that left-leaning individuals perceive their nation’s flags less positively than right-leaning counterparts. Becker et al. (2017) found that the meanings and attitudes associated with flags vary greatly between countries, and over time based on historical context and attitudes. They serve as political symbols that represent nationality and can be both uniting and divisive in their usage (Elgenius, 2011). As such, the detection of national flags using computer vision can glean political insights into environments and locations. 
+
+Recent research has explored the application of convolutional neural networks (CNNs) for national flag detection and recognition tasks in computer vision. Flags present a unique challenge for object detection because they often appear in dynamic settings—waving on poles, displayed on clothing, or in complex image scenes—and many national flags have subtle design differences (Gu et al., 2018). CNNs, which have revolutionized object detection in computer vision, surpass traditional methods by learning hierarchical features directly from data rather than relying on handcrafted features (Neha et al., 2024; Zhiqiang Wang & Liu Jun, 2017). These capabilities make CNNs particularly well-suited for detecting flags, as they can discern intricate patterns and variations in flag designs. Object detection models based on CNNs can be categorized into two approaches: two-stage approaches like R-CNN and Faster R-CNN and one-stage, like YOLO and RetinaNET (F. Sultana et al., 2019). These models have exhibited strong performances on benchmark datasets like PASCAL VOC and MS COCO (Kaur & Singh, 2022).
+
+Kulik & Shtanko (2020) investigated CNNs for recognizing complex objects with varied appearances by focusing on national flags, noting their diverse representations in images. Yerbolat et al. (2024) conducted a comparative analysis of YOLOv8 and Faster R-CNN algorithms for national flag recognition, finding that YOLOv8 offers high processing speed but lower accuracy at high IoU, while Faster R-CNN provides better accuracy at high IoU but slower processing. Gu et al. (2018) developed a CNN using a robust dataset containing flags of different sizes, occlusions, lighting conditions, and deformations and noted greater detection performance compared to other models. However, they noted the potential for improvement using a larger dataset, as the study used a dataset containing only 1668 positive samples. Further studies could benefit from the testing of additional models, like RetinaNET, EfficientDET, and newer YOLO models, as comparisons between models are generally heavily dependent on the specific task (Sanchez et al., 2020). 
+Cabrera-Ponce & Martínez-Carranza (2020) implemented an onboard CNN-based system for flag detection in autonomous landing tasks for micro aerial vehicles (MAVs), achieving high confidence metrics for both flag and landing platform detection. Their approach outperformed conventional computer vision methods like template and feature matching. While this CNN does not involve the detection of national flags, it demonstrates the effectiveness of CNNs in addressing challenges such as illumination changes, rotation, and scale variations in flag detection scenarios.
+
+Despite the existence of convolutional neural networks for flag detection, there remains a gap in the availability of an easy-to-use Python package that provides fast and accessible national flag detection in images. Flagnet is a publicly available neural network capable of detecting flags for 193 United Nations member countries. National Flag Recognition using Machine Learning Techniques is a similar project consisting of 290 countries. Likewise, some Python packages concerning national flags exist, but none can identify and classify flags from images. Pycountry and django-countries are data lookup tools that can retrieve country data, including flags, but no packages exist that can detect flags from images using a complex CNN. While projects like Flagnet and similar deep learning implementations exist for flag detection, they are primarily standalone models or prototypes that require manual setup and adaptation. A dedicated Python package would offer a standardized, well-documented, and easy-to-install library for flag detection, enabling researchers and developers to quickly incorporate this functionality into their workflows without extensive customization. Such a package could provide both high-performance models and practical usability, fostering broader and more accessible adoption and enabling diverse use cases such as automated image analysis and educational tools.
+
 
 <h2>License</h2>
 DeepFace is licensed under the MIT License - see LICENSE for more details.
