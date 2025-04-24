@@ -48,6 +48,8 @@ The full list of supported countries can be found in [Supported Countries List](
 
 <h2>Description of Training</h2>
 
+Models were trained using the Ultralytics package in Python. In addition to models containing all 241 flags, we also developed continent-specific models. These models are trained on the flags of only one continent which yielded better performance. If a user knows their images are from one continent or region, using these models will yield greater performance and a smaller model with faster runtime.
+
 ### All-Country Flag Detection Results
 
 | Metric      | YOLOv8 | YOLOv9 | YOLOv10 | YOLOv11 | Roboflow 3.0 |
