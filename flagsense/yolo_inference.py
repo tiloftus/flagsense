@@ -5,6 +5,8 @@ import os
 from datetime import datetime
 import json
 import uuid
+import requests
+from tqdm import tqdm
 
 MODEL_MAP = {
     "v8": "yv8_all_best.pt",
@@ -30,6 +32,10 @@ MODEL_MAP = {
     "v10_southamerica": "yv10_southamerica_25e_best.pt"
 }
 
+# for usage from hugging face
+MODEL_URL_BASE = "https://huggingface.co/tiloftus/flagsense_models/resolve/main"
+CACHE_DIR = os.path.join(os.path.expanduser("~"), ".flagsense_models")
+
 PACKAGE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR = os.path.join(PACKAGE_DIR, "models")
 #YV8_ALL_PATH = os.path.join(PACKAGE_DIR, "models", "yv8_all_best.pt")
@@ -37,18 +43,15 @@ MODELS_DIR = os.path.join(PACKAGE_DIR, "models")
 class Detector:
     def __init__(self, model_name: str = "v8"):
         """Initialize the model- defaults to YOLOv8 all country model."""
-        model_files = {
-            "v8": "yv8_all_best.pt",
-            "v9": "yv9_all_best.pt",
-            "v10": "yv10_all_best.pt"
-        }
         if model_name not in MODEL_MAP:
             raise ValueError(f"Unknown model name '{model_name}'. Available options: {list(MODEL_MAP.keys())}")
         
-        # model_path = os.path.join(MODELS_DIR, MODEL_MAP[model_name])
-        # self.model = YOLO(model_path)
-        with resources.path("flagsense.models", MODEL_MAP[model_name]) as model_path:
-            self.model = YOLO(str(model_path))
+        #with resources.path("flagsense.models", MODEL_MAP[model_name]) as model_path:
+        #    self.model = YOLO(str(model_path))
+        print(model_name)
+        model_path = download_model_if_needed(model_name)
+        print(model_path)
+        self.model = YOLO(model_path)
 
     def detect(self, image_path: str, save_dir: str = None, verbose: bool = False):
         """Run model on an image, return detections, and optionally save results."""
@@ -133,6 +136,34 @@ class Detector:
         print(f"COCO-format annotation saved at {annot_coco_path}")
 
         return results  # Returns "results" data type
+    
+def download_model_if_needed(model_name: str):
+    """Download model from Hugging Face if not already cached."""
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    filename = MODEL_MAP[model_name]
+    local_path = os.path.join(CACHE_DIR, filename)
+    if os.path.exists(local_path):
+        return local_path
+        
+    url = f"{MODEL_URL_BASE}/{filename}"
+    print(f"Downloading model '{model_name}' from {url}...")
+        
+    response = requests.get(url, stream=True)
+    response.raise_for_status()
+    total = int(response.headers.get("content-length", 0))
+
+    with open(local_path, 'wb') as f, tqdm(
+        total=total,
+        unit='iB',
+        unit_scale=True,
+        desc=filename
+    ) as bar:
+        for chunk in response.iter_content(chunk_size=1024):
+            f.write(chunk)
+            bar.update(len(chunk))
+
+    print(f"Model downloaded and cached at: {local_path}")
+    return local_path
 
 if __name__ == "__main__":
     import argparse
