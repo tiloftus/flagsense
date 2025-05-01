@@ -13,13 +13,24 @@ FlagSense can be easily installed via pip:
 
 <h2>Usage</h2>
 
+The following image files are accepted by YOLO and thus can be used with FlagSense: .jpg, .jpeg, .png, .bmp, .tif, .tiff, .webp.
+
 After installation, FlagSense can be easily used in the command line by running the following code, where input_path is a filepath to an image or a folder containing many images on a local machine.
 
 ```flagsense input_path```
 
-The --model flag allows the user to choose from a list of models included in the package. The default model (if no value is input) is a custom YOLOv8 model trained on all nation flags. The user can choose additional models if they prefer, or can choose continent-specific models. Continent-specific models are useful in situations where the user may know the location of an image and thus expect certain nation flags, or is only interested in classifying flags of a certain continent. For example, if a user knows they only need to search for African flags, they can use FlagSense as below by calling any Africa model they choose.
+The --model flag allows the user to choose from a list of models included in the package. The default model (if no value is input) is a custom YOLOv8 model trained on all nation flags. The user can choose additional models if they prefer, or can choose continent-specific models. Continent-specific models are useful in situations where the user may know the location of an image and thus expect certain nation flags, or is only interested in classifying flags of a certain continent. For example, if a user knows they only need to search for African flags, they can use FlagSense as below by calling any Africa model they choose. The full list of models and their names are below.
 
 ```flagsense input_path --model v8_africa```
+
+FlagSense can also be used within Python by importing the Detector class and calling the "detect" method on an image or folder of images.
+
+```
+from flagsense.yolo_inference import Detector
+
+model = Detector("v9")
+model.detect("/..testimgs")
+```
 
 A list of models and the flags to call them is below:
 
@@ -53,8 +64,6 @@ By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By 
   <img src="images/france_brazil.png" height="192"/>
   <img src="images/germany_china.png" height="192"/>
 </p>
-
-The following image files are accepted by YOLO and thus can be used with FlagSense: .jpg, .jpeg, .png, .bmp, .tif, .tiff, .webp.
 
 <h2>Interpreting/Exporting Output (Format)</h2>
 
