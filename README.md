@@ -45,7 +45,6 @@ A list of models and the flags to call them is below:
 * v9_southamerica: YOLOv9, South America
 * v10_southamerica: YOLOv10, South America
 
-
 By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By adding the flag “verbose”, the model can also output each image overlaid with the annotation. This is off by default since, with a large dataset, creating an additional image for each input image may increase runtime and take up storage.
 
 ```flagsense input_path –verbose```
@@ -54,6 +53,8 @@ By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By 
   <img src="images/france_brazil.png" height="192"/>
   <img src="images/germany_china.png" height="192"/>
 </p>
+
+The following image files are accepted by YOLO and thus can be used with FlagSense: .jpg, .jpeg, .png, .bmp, .tif, .tiff, .webp.
 
 <h2>Interpreting/Exporting Output (Format)</h2>
 
