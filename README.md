@@ -29,7 +29,7 @@ FlagSense can also be used within Python by importing the Detector class and cal
 from flagsense.yolo_inference import Detector
 
 model = Detector("v9")
-model.detect("/..testimgs")
+model.detect("input_path")
 ```
 
 A list of models and the flags to call them is below:
