@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
 	name="flagsense",
-	version="0.1.2",
+	version="0.1.4",
     description="A Python package for flag detection and classification in images, leveraging deep learning models for efficient and accurate results.",
     author="Timothy Loftus",
     author_email="tiloftus.4@gmail.com",

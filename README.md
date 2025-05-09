@@ -130,4 +130,4 @@ Despite the existence of convolutional neural networks for flag detection, there
 
 
 <h2>License</h2>
-DeepFace is licensed under the MIT License - see LICENSE for more details.
+FlagSense is licensed under the MIT License - see LICENSE for more details.

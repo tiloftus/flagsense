@@ -18,3 +18,6 @@ flagsense = "flagsense.__main__:main"
 
 [tool.setuptools]
 include-package-data = true
+
+[project.urls]
+"Homepage" = "https://github.com/tiloftus/flagsense"
