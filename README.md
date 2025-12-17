@@ -42,8 +42,6 @@ A list of models and the flags to call them is below:
 * v10_africa: YOLOv10, Africa
 * v8_asia: YOLOv8, Asia
 * v9_asia: YOLOv9, Asia
-* v10_asia: ,
-* v8_europe: ,
 * v9_europe: YOLOv9, Europe
 * v10_europe: YOLOv10, Europe
 * v8_northamerica: YOLOv8, North America
@@ -51,7 +49,6 @@ A list of models and the flags to call them is below:
 * v10_northamerica: YOLOv10, North America
 * v8_oceania: YOLOv8, Oceania
 * v9_oceania: YOLOv9, Oceania
-* v10_oceania: ,
 * v8_southamerica: YOLOv8, South America
 * v9_southamerica: YOLOv9, South America
 * v10_southamerica: YOLOv10, South America
