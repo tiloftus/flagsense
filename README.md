@@ -55,7 +55,7 @@ A list of models and the flags to call them is below:
 
 By default, FlagSense outputs annotations in both YOLO and COCO JSON format. By adding the flag “verbose”, the model can also output each image overlaid with the annotation. This is off by default since, with a large dataset, creating an additional image for each input image may increase runtime and take up storage.
 
-```flagsense input_path –verbose```
+```flagsense input_path –-verbose```
 
 <p align="left">
   <img src="images/france_brazil.png" height="192"/>
